@@ -1,7 +1,7 @@
 enum MultipleUnit {
     Five,
     Three,
-    ThreeOrFive,
+    ThreeAndFive,
     Other
 }
 
@@ -13,7 +13,7 @@ impl Calculator {
 
         if remainderOfDivisionByThreeEqualZero &&
            remainderOfDivisionByFiveEqualZero {
-            return MultipleUnit::ThreeOrFive;
+            return MultipleUnit::ThreeAndFive;
         } else if remainderOfDivisionByThreeEqualZero {
             return MultipleUnit::Three;
         } else if remainderOfDivisionByFiveEqualZero {
@@ -29,7 +29,7 @@ fn main() {
         match Calculator::multiple(number) {
             MultipleUnit::Three => println!("fizz"),
             MultipleUnit::Five => println!("buzz"),
-            MultipleUnit::ThreeOrFive => println!("fizzbuzz"),
+            MultipleUnit::ThreeAndFive => println!("fizzbuzz"),
             MultipleUnit::Other => println!("{}", number)
         }
     }
